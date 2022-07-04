@@ -15,10 +15,12 @@ var app = new Vue(
         methods: {
         },
         mounted() {
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail',
+            )
             .then((response) => {
-               this.emailsArray = response.data.response; 
-                
+                console.log("",response);
+               this.emailsArray.push(response.data.response); 
+            //    console.log(response.data.response);
             });
            
         }
